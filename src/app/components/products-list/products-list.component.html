@@ -1,5 +1,14 @@
 <ul>
-  <li *ngFor="let product of getProducts().products">
-    {{product.title}}
+  <li class="product" *ngFor="let product of getProducts().products">
+    <img class="product-image" src='{{product.image}}' alt="product image">
+    <h3 class="product-title">
+      {{product.title}}
+    </h3>
+    <p class="product-dscription">
+      {{product.description}}
+    </p>
+    <div class="product-price">
+      {{product.price}}$
+    </div>
   </li>
 </ul>
