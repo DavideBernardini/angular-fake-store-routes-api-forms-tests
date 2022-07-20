@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -8,7 +8,7 @@ export class FetchedProductsService {
 
 	products: any[];
 
-	constructor(public httpClient: HttpClient) {
+	constructor(private httpClient: HttpClient) {
 		this.products = []
 	}
 

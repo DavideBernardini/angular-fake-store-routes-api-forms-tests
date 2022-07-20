@@ -8,7 +8,7 @@ import { FetchedProductsService } from 'src/app/services/fetched-products.servic
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor(public fetchedProducts: FetchedProductsService) { }
+  constructor(private fetchedProducts: FetchedProductsService) { }
 
   getProducts() {
     return this.fetchedProducts;
