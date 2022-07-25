@@ -5,7 +5,7 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-import { ProductService } from './fetched-product.service';
+import { ProductService } from './Products.service';
 
 
 
@@ -25,10 +25,10 @@ describe('ProductService', () => {
   it('should get products', inject(
     [HttpTestingController, ProductService],
     (httpMock: HttpTestingController, ProductService: ProductService) => {
-      const mockService = [
+      const expectedProducts = [
         {
           id: 12,
-          title: 'pomodoro',
+          title: 'tracolla',
           price: 200,
           description: 'description',
           image: ' https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
@@ -36,7 +36,7 @@ describe('ProductService', () => {
 
         {
           id: 10,
-          title: 'mmmhLoris',
+          title: 'zaino',
           price: 300,
           description: 'description2',
           image: ' https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
@@ -44,12 +44,12 @@ describe('ProductService', () => {
       ];
 
       ProductService.fetchProducts().subscribe((data: Product[]) => {
-        expect(data).toEqual(mockService);
+        expect(data).toEqual(expectedProducts);
       });
 
       const req = httpMock.expectOne('https://fakestoreapi.com/products');
       expect(req.request.method).toBe('GET');
-      req.flush(mockService);
+      req.flush(expectedProducts);
 
       httpMock.verify();
     }
