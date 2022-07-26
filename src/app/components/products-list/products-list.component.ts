@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ProductService } from 'src/app/services/Products.service';
 import { Product } from 'src/app/interfaces/Product';
 
@@ -12,7 +13,9 @@ export class ProductsListComponent implements OnInit {
   products: Product[];
   isloading: boolean;
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    ) {
     this.products = [];
     this.isloading = false;
   }

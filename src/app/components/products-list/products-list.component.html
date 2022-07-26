@@ -10,5 +10,6 @@
     <div class="product-price">
       {{product.price | currency}}
     </div>
+    <a [routerLink]="['/product', product.id]">{{product.title}} info</a>
   </li>
 </ul>
