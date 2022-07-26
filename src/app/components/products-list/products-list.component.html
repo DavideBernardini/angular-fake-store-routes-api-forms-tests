@@ -1,15 +1,17 @@
-<ul class="product-list">
-  <li class="product" *ngFor="let product of products">
-    <img class="product-image" src='{{product.image}}' alt='{{product.title}}'>
-    <h3 class="product-title">
-      {{product.title}}
-    </h3>
-    <p class="product-description">
-      {{product.description}}
-    </p>
-    <div class="product-price">
-      {{product.price | currency}}
-    </div>
-    <a [routerLink]="['/product', product.id]">{{product.title}} info</a>
-  </li>
-</ul>
+<aside>
+  <ul class="product-list">
+    <li class="product" *ngFor="let product of products">
+      <img class="product-image" src='{{product.image}}' alt='{{product.title}}'>
+      <h3 class="product-title">
+        {{product.title}}
+      </h3>
+      <p class="product-description">
+        {{product.description}}
+      </p>
+      <div class="product-price">
+        {{product.price | currency}}
+      </div>
+      <a [routerLink]="['/product', product.id]">{{product.title}} info</a>
+    </li>
+  </ul>
+</aside>

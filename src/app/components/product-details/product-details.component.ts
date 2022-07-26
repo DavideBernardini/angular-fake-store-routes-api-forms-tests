@@ -10,15 +10,13 @@ import { Product } from 'src/app/interfaces/Product';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  products: Product[];
+
   product: Product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
   ) {
-    this.products = [];
-
     this.product = {
       id: 0,
       title: '',
@@ -31,19 +29,21 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.productService.fetchProducts().subscribe((products: Product[]) => {
-      this.products = products;
-    });
-
     this.activatedRoute.params.subscribe(params => {
 
-      this.products.forEach(element => {
+      this.productService.fetchProducts().subscribe((products: Product[]) => {
 
-        if(element.id == params['id'])
-          this.product = element;
+        const fetchedProducts: Product[] = products;
 
+        fetchedProducts.forEach(element => {
+
+          if (element.id == params['id'])
+            this.product = element;
+        });
       });
     });
+
+    console.log(this.product);
 
   }
 }

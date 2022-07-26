@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { delay } from 'rxjs/operators';
+
 import { Product } from '../interfaces/Product';
 @Injectable({
 	providedIn: 'root'
@@ -12,6 +12,6 @@ export class ProductService {
 	}
 
   fetchProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products').pipe(delay(2000));
+    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products');
   }
 }
