@@ -12,14 +12,13 @@ import { Product } from 'src/app/interfaces/Product';
 export class ProductDetailsComponent implements OnInit {
   products: Product[];
   product: Product;
-  productID: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
   ) {
     this.products = [];
-    this.productID = 0;
+
     this.product = {
       id: 0,
       title: '',
@@ -32,10 +31,18 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params => this.productID = params['id']);
-
     this.productService.fetchProducts().subscribe((products: Product[]) => {
       this.products = products;
+    });
+
+    this.activatedRoute.params.subscribe(params => {
+
+      this.products.forEach(element => {
+
+        if(element.id == params['id'])
+          this.product = element;
+
+      });
     });
 
   }
