@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from 'src/app/services/Products.service';
 
-import { Product } from 'src/app/interfaces/Product';
+import { Product } from 'src/app/services/interfaces/Product';
 
 @Component({
   selector: 'app-product-details',
@@ -31,19 +31,11 @@ export class ProductDetailsComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
 
-      this.productService.fetchProducts().subscribe((products: Product[]) => {
-
-        const fetchedProducts: Product[] = products;
-
-        fetchedProducts.forEach(element => {
-
-          if (element.id == params['id'])
-            this.product = element;
-        });
+      this.productService.fetchProductById(params['id']).subscribe((fetchedProduct: Product) => {
+        this.product = fetchedProduct;
       });
-    });
 
-    console.log(this.product);
+    });
 
   }
 }

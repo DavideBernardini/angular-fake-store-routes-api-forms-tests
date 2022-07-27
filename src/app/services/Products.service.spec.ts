@@ -1,4 +1,4 @@
-import { Product } from 'src/app/interfaces/Product';
+import { Product } from 'src/app/services/interfaces/Product';
 import { TestBed, inject } from '@angular/core/testing';
 import {
   HttpClientTestingModule,

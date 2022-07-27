@@ -2,7 +2,7 @@ import { ProductService } from 'src/app/services/Products.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
-import { Product } from 'src/app/interfaces/Product';
+import { Product } from 'src/app/services/interfaces/Product';
 
 import { ProductsListComponent } from './products-list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
