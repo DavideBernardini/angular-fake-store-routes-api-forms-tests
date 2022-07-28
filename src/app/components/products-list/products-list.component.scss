@@ -1,15 +1,18 @@
 aside {
-  width: 350px;
-  padding-left: 30px;
-
   .product-list {
+    margin-top: 30px;
+
     .product {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       list-style: none;
+      padding: 0 10%;
+
       &-image {
         max-width: 50%;
         display: block;
         margin: auto;
+        transition: all .2s;
+
       }
 
       &-title {
@@ -23,8 +26,11 @@ aside {
       &-price {
         font-size: 18px;
         font-weight: 600;
-        padding-right: 30px;
+        margin-top: 15px;
       }
+    }
+    .product:hover .product-image {
+      transform: scale(1.15);
     }
   }
 }

@@ -1,6 +1,22 @@
 main {
-  margin-top: 95px;
   display: flex;
+  height: calc(100vh - 105px);
+  overflow: hidden;
 }
+
+//aside parent compoinent style
+.app-product-list {
+  max-width: 25%;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.app-product-details {
+  max-width: 75%;
+  flex-shrink: 0;
+}
+
+
+
 
 
