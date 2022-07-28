@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { delay } from 'rxjs/operators';
+import { delay } from 'rxjs/operators';
 import { ProductService } from 'src/app/services/Products.service';
 import { Product } from 'src/app/services/interfaces/Product';
 
@@ -24,11 +24,10 @@ export class ProductsListComponent implements OnInit {
 
     this.isloading = true;
 
-    this.productService.fetchProducts().subscribe((products: Product[]) => {
+    this.productService.fetchProducts().pipe(delay(2000)).subscribe((products: Product[]) => {
       this.products = products;
       this.isloading = false;
     });
   }
 
 }
-//.pipe(delay(2000))

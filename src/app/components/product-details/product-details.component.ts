@@ -12,11 +12,13 @@ import { Product } from 'src/app/services/interfaces/Product';
 export class ProductDetailsComponent implements OnInit {
 
   product: Product;
+  fetchComplete: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
   ) {
+
     this.product = {
       id: 0,
       title: '',
@@ -25,6 +27,8 @@ export class ProductDetailsComponent implements OnInit {
       image: '',
       category: ''
     };
+
+    this.fetchComplete = false
   }
 
   ngOnInit(): void {
@@ -32,7 +36,10 @@ export class ProductDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
 
       this.productService.fetchProductById(params['id']).subscribe((fetchedProduct: Product) => {
+
         this.product = fetchedProduct;
+
+        this.fetchComplete = true;
       });
 
     });

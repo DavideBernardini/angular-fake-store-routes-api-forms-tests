@@ -26,7 +26,7 @@
 
     &-category {
       margin: 15px 0 12px;
-      background-color: #898b10;
+      background-color: #b8860b;
       display: inline-block;
       padding: 5px 10px;
       font-weight: 800;
@@ -42,11 +42,31 @@
     }
 
     &-price {
-      font-size: 22px;
+      margin-top: 10px;
+      font-size: 24px;
       font-weight: 600;
-      margin-top: 18px;
-      text-align: end;
+      vertical-align: middle;
+      margin-right: 10px;
     }
+
+    &-btn-container {
+      text-align: end;
+      button {
+        border: none;
+        padding: 8px 12px;
+        background-color: #008b8b;
+        color: white;
+        font-weight: 800;
+        vertical-align: middle;
+        font-size: 16px;
+        border-radius: 25px;
+        right: 0;
+        cursor: pointer;
+      }
+
+    }
+
+
   }
 
 }
