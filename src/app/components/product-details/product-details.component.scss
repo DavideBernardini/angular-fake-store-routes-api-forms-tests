@@ -24,11 +24,10 @@
   &-right {
     padding-right: 40px;
     overflow-y: auto;
+    overflow-x: hidden;
     &-content {
-
-      height: 100%;
+      max-height: 100%;
     }
-
 
     &-category {
       margin: 15px 0 12px;
