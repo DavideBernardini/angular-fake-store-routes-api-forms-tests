@@ -23,6 +23,7 @@
 
   &-right {
     padding-right: 40px;
+    overflow-y: auto;
 
     &-category {
       margin: 15px 0 12px;
@@ -51,6 +52,7 @@
 
     &-btn-container {
       text-align: end;
+
       button {
         border: none;
         padding: 8px 12px;
@@ -62,6 +64,11 @@
         border-radius: 25px;
         right: 0;
         cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      button:hover {
+        background-color: #008b8bc4;
       }
 
     }

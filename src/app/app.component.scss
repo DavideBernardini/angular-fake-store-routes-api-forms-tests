@@ -1,14 +1,36 @@
-main {
+.app {
   display: flex;
-  height: calc(100vh - 105px);
+  flex-direction: column;
+  height: 100vh;
+  .header {
+    height: 65px;
+  }
+
+  .footer {
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .main {
+    display: flex;
+    flex-grow: 1;
+
+    .app-product-list {
+      max-width: 25%;
+    }
+  }
+}
+
+.main {
   overflow: hidden;
   position: relative;
+
 }
 
 //aside parent compoinent style
 .app-product-list {
-  max-width: 25%;
   overflow-y: auto;
+  overflow-x: hidden;
   flex-shrink: 0;
 }
 
@@ -18,8 +40,3 @@ main {
   background-repeat: no-repeat;
   background-position: 70%;
 }
-
-
-
-
-

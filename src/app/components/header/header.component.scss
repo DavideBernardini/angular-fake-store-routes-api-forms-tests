@@ -1,5 +1,5 @@
 .header {
-  height: 65px;
+  height: 100%;
   background-color: #008888;
   padding: 0 30px;
   display: flex;
@@ -36,6 +36,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      transition: all 0.2s;
     }
     &-icon:hover {
       background-color: #1dbebe;
