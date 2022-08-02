@@ -1,0 +1,38 @@
+<form class="form" [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+  <label class="input-label" for="id"> Id: </label>
+  <input class="input" id="id" type="number" formControlName="id" />
+
+  <label class="input-label" for="title"> Title: </label>
+  <input class="input" id="title" type="text" formControlName="title" />
+
+  <div
+  *ngIf="newProductForm.controls['title'].invalid
+  && newProductForm.controls['title'].touched
+  && newProductForm.controls['title'].dirty">
+
+    <div *ngIf="newProductForm.value.title.errors?.['required']">
+      Title is required.
+    </div>
+    <div *ngIf="newProductForm.value.title.errors?.['minlength']">
+      Title must be at least 4 characters long.
+    </div>
+  </div>
+
+  <label class="input-label" for="price"> Price: </label>
+  <input class="input" id="price" type="number" formControlName="price" />
+
+  <label class="input-label" for="description"> Description: </label>
+  <input
+    class="input"
+    id="description"
+    type="text"
+    formControlName="description"
+  />
+
+  <label class="input-label" for="category"> Category: </label>
+  <input class="input" id="category" type="text" formControlName="category" />
+
+  <button class="submit-btn" type="submit" [disabled]="newProductForm.invalid">
+    Crea prodotto
+  </button>
+</form>

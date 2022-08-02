@@ -8,16 +8,23 @@
   scrollbar-width: thin;
   scrollbar-color: #016d6d50 #335a5a13;
 }
+
 // scrollbar chromiums/safari
 *::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+  width: 12px;
+  /* width of the entire scrollbar */
 }
+
 *::-webkit-scrollbar-track {
-  background: #335a5a13;        /* color of the tracking area */
+  background: #335a5a13;
+  /* color of the tracking area */
 }
+
 *::-webkit-scrollbar-thumb {
-  background-color: #016d6d50;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: #016d6d50;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
 }
 
 //reset anchors
@@ -25,8 +32,24 @@ a {
   text-decoration: none;
   color: initial;
 }
+
 a:hover {
   color: initial;
+}
+
+// reset input style
+//chromiums
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+//firefox
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
 }
 
 // google font
@@ -36,5 +59,3 @@ body {
   font-family: 'Lato', sans-serif;
   line-height: 1.4;
 }
-
-

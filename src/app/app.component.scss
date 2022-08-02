@@ -20,7 +20,10 @@
     }
   }
 }
-
+//router-outlet components style
+::ng-deep .app-product-form {
+  width: 100%;
+}
 .main {
   overflow: hidden;
   position: relative;
