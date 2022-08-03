@@ -9,7 +9,11 @@
   </a>
 
   <div class="header-right">
-    <a [routerLink]="['/product-form']"> add product</a>
+    <div class="header-right-icon add-product">
+      <a [routerLink]="['/product-form']">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </a>
+    </div>
     <div class="header-right-icon user">
       <fa-icon [icon]="faUser"></fa-icon>
     </div>
