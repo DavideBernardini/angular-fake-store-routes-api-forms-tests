@@ -14,11 +14,11 @@ export class ProductService {
 	}
 
   fetchProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products').pipe(delay(2000));
+    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products').pipe(delay(1000));
   }
 
   fetchProductById(id: number): Observable<Product> {
-    return this.httpClient.get<Product>(`https://fakestoreapi.com/products/${id}`).pipe(delay(100));
+    return this.httpClient.get<Product>(`https://fakestoreapi.com/products/${id}`);
   }
 
   createProduct(newProduct: Omit<Product, 'id' | 'image'>): Observable<Omit<Product, 'id' | 'image'>> {
