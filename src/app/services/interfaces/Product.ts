@@ -8,8 +8,8 @@ export interface Product {
 
   description: string;
 
-  image?: string;
+  image: string;
 
-  category?: string;
+  category: string;
 
-}
+};

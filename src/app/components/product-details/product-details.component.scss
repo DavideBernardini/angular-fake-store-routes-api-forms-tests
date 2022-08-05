@@ -1,6 +1,26 @@
+.loader {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+  &-spinner {
+    max-width: 20%;
+    animation: spinning 1s infinite linear;
+  }
+
+  @keyframes spinning {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+}
+
 .details {
   background-color: #fff;
   height: 100%;
+  width: 100%;
   display: flex;
 
   &-left,

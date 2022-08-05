@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { ProductService } from 'src/app/services/Products.service';
+import { Product } from 'src/app/services/interfaces/Product';
 @Component({
   selector: 'app-product-form',
   host: {
@@ -12,10 +13,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProductFormComponent {
 
   newProductForm: FormGroup;
+  newProduct: Omit<Product, 'id' | 'image'>;
 
   categories: string[];
 
-  constructor() {
+  constructor(private productService: ProductService,) {
     this.newProductForm = new FormGroup({
       title: new FormControl(null, [
         Validators.required,
@@ -42,20 +44,28 @@ export class ProductFormComponent {
       "electronics",
       "women's clothing"
     ];
+
+    this.newProduct = {
+      title: '',
+      price: 0,
+      description: '',
+      category: ''
+    }
   }
 
   onSubmit() {
-    if (this.newProductForm.invalid) {
+    // if (this.newProductForm.invalid) {
 
-      console.error("Invalid form.");
+    //   console.error("Invalid form.");
 
-      Object.keys(this.newProductForm.controls).forEach(key => {
-        console.error(key, this.newProductForm.get(key)?.errors);
-      });
-    }
+    //   Object.keys(this.newProductForm.controls).forEach(key => {
+    //     console.error(key, this.newProductForm.get(key)?.errors);
+    //   });
+    // }
+    this.newProduct = this.newProductForm.value;
 
-    console.log(this.newProductForm.valid);
-    console.log(this.newProductForm.value);
+    this.productService.createProduct(this.newProduct).subscribe((res) => {
+      console.log(res);
+    });
   }
-
 }

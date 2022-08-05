@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
   padding: 0 10%;
 
   .form-field {
@@ -72,6 +73,6 @@
   }
 
   .submit-btn:hover {
-    background-color: #008b8ba8;
+    background-color: #008b8bb9;
   }
 }

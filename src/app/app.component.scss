@@ -24,6 +24,11 @@
 ::ng-deep .app-product-form {
   width: 100%;
 }
+::ng-deep .app-product-details {
+  flex-grow: 1;
+  overflow: auto;
+}
+
 .main {
   overflow: hidden;
   position: relative;
