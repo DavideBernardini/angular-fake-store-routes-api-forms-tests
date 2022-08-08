@@ -13,3 +13,5 @@ export interface Product {
   category: string;
 
 };
+
+export type NewProduct = Omit<Product, 'id' | 'image'>

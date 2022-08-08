@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailsComponent,
     HeaderComponent,
     FooterComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

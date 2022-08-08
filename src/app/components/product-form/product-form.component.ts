@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/services/Products.service';
-import { Product } from 'src/app/services/interfaces/Product';
 @Component({
   selector: 'app-product-form',
   host: {
@@ -13,7 +12,6 @@ import { Product } from 'src/app/services/interfaces/Product';
 export class ProductFormComponent {
 
   newProductForm: FormGroup;
-  newProduct: Omit<Product, 'id' | 'image'>;
 
   categories: string[];
 
@@ -44,13 +42,6 @@ export class ProductFormComponent {
       "electronics",
       "women's clothing"
     ];
-
-    this.newProduct = {
-      title: '',
-      price: 0,
-      description: '',
-      category: ''
-    }
   }
 
   onSubmit() {
@@ -62,9 +53,13 @@ export class ProductFormComponent {
     //     console.error(key, this.newProductForm.get(key)?.errors);
     //   });
     // }
-    this.newProduct = this.newProductForm.value;
+    if (this.newProductForm.invalid) {
+      console.error("Invalid form.", this.newProductForm.errors);
+      return;
+    }
 
-    this.productService.createProduct(this.newProduct).subscribe((res) => {
+    const newProduct = this.newProductForm.value;
+    this.productService.createProduct(newProduct).subscribe((res) => {
       console.log(res);
     });
   }

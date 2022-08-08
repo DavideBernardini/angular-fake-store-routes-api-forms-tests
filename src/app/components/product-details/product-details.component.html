@@ -1,4 +1,8 @@
-<div class="details">
+<div class="loader" *ngIf="isloading">
+  <img class="loader-spinner" src='../../../assets/images/1158899.png' alt="spinning arrows loader">
+</div>
+
+<div class="details" *ngIf="!isloading">
   <div class="details-left" *ngIf="product">
     <img
       src="{{ product.image }}"

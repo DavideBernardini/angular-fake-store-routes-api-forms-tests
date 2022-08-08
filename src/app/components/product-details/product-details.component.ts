@@ -27,9 +27,9 @@ export class ProductDetailsComponent implements OnInit {
     this.isloading = true;
 
     this.activatedRoute.params.subscribe(params => {
+      this.isloading = true;
 
-      this.productService.fetchProductById(params['id']).subscribe((fetchedProduct: Product) => {
-
+      this.productService.fetchProductById(params['id']).subscribe((fetchedProduct?: Product) => {
         this.product = fetchedProduct;
         this.isloading = false;
       });
